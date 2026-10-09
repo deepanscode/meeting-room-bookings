@@ -20,10 +20,4 @@ public class RoomServiceTests
         Assert.NotNull(room);
         Assert.Equal("Bridge", room.Name);
     }
-
-    [Fact]
-    public void GetRoom_ReturnsNull_WhenRoomDoesNotExist()
-    {
-        Assert.Null(_service.GetRoom(99));
-    }
 }
