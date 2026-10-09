@@ -13,5 +13,7 @@ public class RoomService
 
     public IReadOnlyList<Room> GetRooms() => _rooms;
 
-    public Room? GetRoom(int id) => _rooms.FirstOrDefault(r => r.Id == id);
+    public Room GetRoom(int id) =>
+        _rooms.FirstOrDefault(r => r.Id == id)
+        ?? throw new KeyNotFoundException($"Room with id {id} was not found.");
 }
